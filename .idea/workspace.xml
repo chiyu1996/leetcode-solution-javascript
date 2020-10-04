@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="db4ec73b-6feb-4411-a32e-c2cbbb610adb" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1iPCymWFsnyKVxhMWu7cigPnOto" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="leetcode.id" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="Node.js.[剑指 Offer 22]链表中倒数第k个节点.js">
+    <configuration name="[剑指 Offer 22]链表中倒数第k个节点.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/editor/cn/[剑指 Offer 22]链表中倒数第k个节点.js" working-dir="$PROJECT_DIR$/editor/cn">
+      <method v="2" />
+    </configuration>
+    <configuration name="[12]整数转罗马数字.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/editor/cn/[12]整数转罗马数字.js" working-dir="$PROJECT_DIR$/editor/cn">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.[剑指 Offer 22]链表中倒数第k个节点.js" />
+        <item itemvalue="Node.js.[12]整数转罗马数字.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="db4ec73b-6feb-4411-a32e-c2cbbb610adb" name="Default Changelist" comment="" />
+      <created>1601800096419</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1601800096419</updated>
+      <workItem from="1601800097464" duration="14000" />
+      <workItem from="1601800143732" duration="16333000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="694" y="343" key="#Notifications" timestamp="1601802303108">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="694" y="343" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1601802303108" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1601800109609">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1601800109609" />
+    <state width="1876" height="282" key="GridCell.Tab.0.bottom" timestamp="1601813664767">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601813664767" />
+    <state width="1876" height="282" key="GridCell.Tab.0.center" timestamp="1601813664767">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601813664767" />
+    <state width="1876" height="282" key="GridCell.Tab.0.left" timestamp="1601813664767">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601813664767" />
+    <state width="1876" height="282" key="GridCell.Tab.0.right" timestamp="1601813664767">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601813664767" />
+    <state x="461" y="164" width="1244" height="711" key="SettingsEditor" timestamp="1601801387982">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="164" width="1244" height="711" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1601801387982" />
+  </component>
+</project>
