@@ -30,6 +30,20 @@
  * @param {TreeNode} root
  * @return {number[]}
  */
+//递归版
+var preorderTraversal = function (root) {
+    let ans = [];
+    const dfs = (root) => {
+        if (root === null) return;
+        ans.push(root.val);
+        dfs(root.left);
+        dfs(root.right);
+    };
+    dfs(root);
+    return ans;
+
+};
+//迭代版
 var preorderTraversal = function (root) {
     if (root === null) return [];
     let ans = [];
@@ -45,6 +59,31 @@ var preorderTraversal = function (root) {
         }
     }
     return ans;
+};
+//mirror遍历
+var preorderTraversal = function (root) {
+    let ans = [];
+    while (root) {
+        if (root.left !== null) {
+            let pre = root.left;
+            while (pre.right !== null && pre.right !== root) {
+                pre = pre.right;
+            }
+            if (pre.right === root) {
+                pre.right = null;
+                ans.push(root.val);
+                root = root.right;
 
+            } else {
+
+                pre.right = root;
+                root = root.left;
+            }
+        } else {
+            ans.push(root.val);
+            root = root.right;
+        }
+    }
+    return ans;
 };
 //leetcode submit region end(Prohibit modification and deletion)

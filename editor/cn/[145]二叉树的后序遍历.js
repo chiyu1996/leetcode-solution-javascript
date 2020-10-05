@@ -29,6 +29,7 @@
  * @param {TreeNode} root
  * @return {number[]}
  */
+//递归版
 var postorderTraversal = function (root) {
     let ans = [];
     const dfs = (root) => {
@@ -39,5 +40,47 @@ var postorderTraversal = function (root) {
     };
     dfs(root);
     return ans;
+};
+//迭代版
+var postorderTraversal = function (root) {
+    let ans = [];
+    if (root === null) return [];
+    let stack = [root];
+    while (stack.length) {
+        let root = stack.pop();
+        ans.push(root.val);
+        if (root.left !== null) {
+            stack.push(root.left);
+        }
+        if (root.right !== null) {
+            stack.push(root.right);
+        }
+
+    }
+    return ans.reverse();
+};
+//mirrors遍历
+var postorderTraversal = function (root) {
+    let ans = [];
+    while (root) {
+        if (root.right !== null) {
+            let pre = root.right;
+            while (pre.left !== null && pre.left !== root) {
+                pre = pre.left;
+            }
+            if (pre.left !== null) {
+                pre.left = null;
+                root = root.left;
+            } else {
+                ans.push(root.val);
+                pre.left = root;
+                root = root.right;
+            }
+        } else {
+            ans.push(root.val);
+            root = root.left;
+        }
+    }
+    return ans.reverse();
 };
 //leetcode submit region end(Prohibit modification and deletion)
