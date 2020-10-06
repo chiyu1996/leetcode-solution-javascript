@@ -55,6 +55,7 @@ var sumOfDistancesInTree = function (N, edges) {
             if (v === pre) {
                 continue;
             }
+            //将原值缓存
             const pu = dp[u], pv = dp[v];
             const su = size[u], sv = size[v];
             dp[u] -= dp[v] + size[v];
@@ -62,6 +63,7 @@ var sumOfDistancesInTree = function (N, edges) {
             dp[v] += dp[u] + size[u];
             size[v] += size[u];
             dfs2(v, u);
+            //回溯
             dp[u] = pu;
             dp[v] = pv;
             size[u] = su;
