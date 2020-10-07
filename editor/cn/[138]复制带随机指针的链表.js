@@ -80,27 +80,23 @@ var copyRandomList = function (head) {
         return null;
     }
     const map = new Map();
-    let node = head;
-    const newHead = new Node(node.val);
-    let newNode = newHead;
-    map.set(node, newNode);
+    let curNode = head;
     //1.复制每个结点，如复制结点A得到A1，将结点A1插到结点A后面；
-    while (node.next) {
-        newNode.next = new Node(node.next.val);
-        node = node.next;
-        newNode = newNode.next;
+    while (curNode) {
+        let newNode = new Node(curNode.val);
         //2.因为random可能会指向一个还未创建的新节点,所以先把A和A1保存在Map中;
-        map.set(node, newNode);
+        map.set(curNode, newNode);
+        curNode = curNode.next
     }
-    newNode = newHead;
-    node = head;
+    curNode = head;
     //3.重新遍历链表，复制老结点的随机指针给新结点，如A1.random = A.random;
-    while (newNode) {
-        newNode.random = map.get(node.random);
-        newNode = newNode.next;
-        node = node.next;
+    while (curNode) {
+        let newNode = map.get(curNode);
+        newNode.next = curNode.next &&map.get(curNode.next)
+        newNode.random = curNode.random && map.get(curNode.random);
+        curNode = curNode.next
     }
-    return newHead;
+    return map.get(head);
 };
 
 
