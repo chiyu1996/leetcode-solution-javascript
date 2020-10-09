@@ -33,7 +33,6 @@ var firstUniqChar = function (s) {
         }
     }
     for (let i = 0; i < s.length; i++) {
-
         if (map.get(s[i]) === 1)
             return i;
     }
