@@ -45,7 +45,7 @@ var minDistance = function (word1, word2) {
 
     let length1 = word1.length;
     let length2 = word2.length;
-    let dp = new Array(length1 + 1).fill(0).map(() => new Array(length2 + 1).fill(0));
+    let dp = new Array(length1 + 1).fill(undefined).map(() => new Array(length2 + 1).fill(0));
     for (let i = 0; i < length1 + 1; i++) {
         dp[i][0] = i;
     }
