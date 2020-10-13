@@ -24,13 +24,12 @@ var maximalRectangle = function (matrix) {
 
     let m = matrix.length;
     let n = matrix[0].length;
-    let high = new Array(m).fill(undefined).map(() => {
-        return new Array(n).fill(0);
-    });
+    let high = new Array(n).fill(0);
     let maxArea = 0;
     let getMaxArea = (row) => {
         row = [-1, ...row, -1];
         let maxStack = [];
+
         for (let i = 0; i < row.length; i++) {
             while (row[i] < row[maxStack[maxStack.length - 1]]) {
                 let tmp = maxStack.pop();
@@ -41,15 +40,15 @@ var maximalRectangle = function (matrix) {
     };
     for (let i = 0; i < m; i++) {
         for (let j = 0; j < n; j++) {
-            let tmp = Number(matrix[i][j]);
+            let tmp = +matrix[i][j];
             if (i === 0) {
-                high[i][j] = tmp;
+                high[j] = tmp;
             } else {
-                high[i][j] = tmp ? tmp + high[i - 1][j] : tmp;
+                high[j] = tmp ? tmp + high[j] : tmp;
             }
 
         }
-        getMaxArea(high[i]);
+        getMaxArea(high);
     }
     return maxArea;
 };
