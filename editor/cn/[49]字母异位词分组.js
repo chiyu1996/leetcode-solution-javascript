@@ -33,7 +33,7 @@ var groupAnagrams = function (strs) {
     for (let i = 0; i < n; i++) {
         let hash = 1;
         for (let j = 0; j < strs[i].length; j++) {
-            let num = strs[i][j].charCodeAt(0) - "a".charCodeAt(0);
+            let num = strs[i].charCodeAt(j) - "a".charCodeAt(0);
             hash = ((hash % mod) * (prime[num] % mod)) % mod;
         }
         if (!ans.get(hash)) ans.set(hash, []);
