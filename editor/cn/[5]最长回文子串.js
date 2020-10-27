@@ -1,4 +1,4 @@
-F//给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。
+F;//给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。
 //
 // 示例 1： 
 //
@@ -21,36 +21,50 @@ F//给定一个字符串 s，找到 s 中最长的回文子串。你可以假设
  * @param {string} s
  * @return {string}
  */
+//动态规划
 var longestPalindrome = function (s) {
-    let len = s.length;
-    let dp = new Array(len);
-    for (let i = 0; i < len; i++) {
-        dp[i] = new Array(len).fill(false);
-    }
-    if (len === 0) {
+    let n = s.length;
+    if (n === 0) {
         return "";
     }
-    let max = 1;
-    let ans = s[0];
-    for (let i = 0; i < len; i++) {
-        dp[i][i] = true;
-        if (s[i] === s[i + 1]) {
-            dp[i][i + 1] = true;
-            max = 2;
-            ans = s.substr(i, 2);
-
-        }
-    }
-    for (let k = 3; k <= len; k++) {
-        for (let i = 0; i + k - 1 < len; i++) {
-            let j = i + k - 1;
-            dp[i][j] = dp[i + 1][j - 1] && s[i] === s[j];
-            if (dp[i][j] && k > max) {
-                max = k;
-                ans = s.substr(i, k);
+    let dp = new Array(n).fill(undefined).map(() => new Array(n).fill(false));
+    let ans = "";
+    for (let i = n - 1; i >= 0; i--) {
+        for (let j = i; j < n; j++) {
+            if (s[i] === s[j] && (j - i < 2 || dp[i + 1][j - 1])) {
+                dp[i][j] = true;
+                if (j - i + 1 > ans.length) {
+                    ans = s.substring(i, j + 1);
+                }
             }
         }
     }
     return ans;
+};
+//中心扩展法
+var longestPalindrome = function (s) {
+    let length = s.length;
+    if (length < 2) {
+        return s;
+    }
+    let [start, maxLength] = [0, 1];
+
+    //判断一个字符串是否为回文
+    function isPalindrome(left, right) {
+        while (left >= 0 && right < length && s[left] === s[right]) {
+            if (right - left + 1 > maxLength) {
+                maxLength = right - left + 1;
+                start = left;
+            }
+            left--;
+            right++;
+        }
+    }
+
+    for (let i = 0; i < length; i++) {
+        isPalindrome(i - 1, i + 1);
+        isPalindrome(i, i + 1);
+    }
+    return s.substring(start, start + maxLength);
 };
 //leetcode submit region end(Prohibit modification and deletion)

@@ -24,7 +24,7 @@ var shortestPalindrome = function (s) {
     let next = new Array(n).fill(-1);
     for (let i = 1; i < n; i++) {
         let j = next[i - 1];
-        while (j != -1 && s[j + 1] !== s[i]) {
+        while (j !== -1 && s[j + 1] !== s[i]) {
             j = next[j];
         }
         if (s[j + 1] === s[i]) {
