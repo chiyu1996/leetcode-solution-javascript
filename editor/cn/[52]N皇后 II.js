@@ -49,7 +49,7 @@ var totalNQueens = function (n) {
     let cols = new Set();
     let dia1 = new Set();
     let dia2 = new Set();
-    let dfs = (row) => {
+    const dfs = (row) => {
         if (row === n) {
             const cur = board.slice();
             for (let i = 0; i < n; i++) {
