@@ -31,21 +31,16 @@
  * @return {number}
  */
 var reverse = function (x) {
-    let s = x + "";
-    let sym = s[0];
-    const len = s.length;
-    let ans = 0;
-    for (let i = len - 1; i > 0; i--) {
-        ans = ans * 10 + Number(s[i]);
+    let rev = 0;
+    let Max = (2 ** 31 - 1) / 10 | 0;
+    let Min = -(2 ** 31) / 10 | 0;
+    while (x !== 0) {
+        let last = x % 10;
+        x = x / 10 | 0;
+        if (rev > Max || (rev === Max && last > 7)) return 0;
+        if (rev < Min || (rev === Min && last < -8)) return 0;
+        rev = rev * 10 + last;
     }
-    if (sym !== "-") {
-        ans = ans * 10 + Number(sym);
-    } else {
-        ans *= -1;
-    }
-    if (ans > Math.pow(2, 31) || ans < -(Math.pow(2, 31) - 1)) {
-        ans = 0;
-    }
-    return ans;
+    return rev;
 };
 //leetcode submit region end(Prohibit modification and deletion)

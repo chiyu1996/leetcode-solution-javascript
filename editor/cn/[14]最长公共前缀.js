@@ -27,18 +27,20 @@
  * @param {string[]} strs
  * @return {string}
  */
-var longestCommonPrefix = function(strs) {
+var longestCommonPrefix = function (strs) {
 
-    if(strs.length===0)return''
-    let prefix=strs[0]
-    for(let i=1;i<strs.length;i++){
-        while (strs[i].indexOf(prefix)!=0){
-            prefix=prefix.substring(0,prefix.length-1)
-            if(prefix===undefined) return ""
+    let n = strs.length;
+    if (n === 0) return "";
+    let m = strs[0].length;
+    for (let i = 0; i < m; i++) {
+        for (let j = 1; j < n; j++) {
+            let c = strs[0].charAt(i);
+            if (i === strs[j].length || strs[j].charAt(i) !== c) {
+                return strs[0].substring(0, i);
+            }
         }
     }
-    return prefix;
-
+    return strs[0];
 };
 //分治
 // var longestCommonPrefix = function (strs) {
