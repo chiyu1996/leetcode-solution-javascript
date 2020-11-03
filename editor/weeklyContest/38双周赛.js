@@ -70,14 +70,14 @@ var numWays = function (words, target) {
     let n = words[0].length;
     let mod = 1e9 + 7;
     let dp = new Array(m + 1).fill(undefined).map(() => {
-        return new Array(n + 1).fill(0);
+        return new Int32Array(n + 1);
     });
     let pre = new Array(1005).fill(undefined).map(() => {
-        return new Array(200).fill(0);
+        return new Int32Array(26);
     });
     for (let word of words) {
         for (let i = 0; i < n; i++) {
-            let char_index = word.charCodeAt(i);
+            let char_index = word.charCodeAt(i) - 97;
             pre[i + 1][char_index]++;
         }
     }
@@ -87,11 +87,12 @@ var numWays = function (words, target) {
         for (let j = 1; j <= n; j++) {
             dp[i - 1][j] += dp[i - 1][j - 1];
             dp[i - 1][j] %= mod;
+
         }
         for (let j = i; j <= n; j++) {
-            let char_index = target.charCodeAt(i - 1);
+            let char_index = target.charCodeAt(i - 1) - 97;
             if (pre[j][char_index]) {
-                dp[i][j] += dp[i - 1][j - 1] * pre[j][char_index];
+                dp[i][j] += ((dp[i - 1][j - 1] % mod) * (pre[j][char_index] % mod)) % mod;
                 dp[i][j] %= mod;
             }
         }
