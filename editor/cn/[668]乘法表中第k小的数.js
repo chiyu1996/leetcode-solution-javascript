@@ -52,7 +52,6 @@ var findKthNumber = function (m, n, k) {
         for (let i = 1; i <= m; i++) {
             cnt += Math.min(Math.floor(x / i), n);
         }
-        console.log(cnt)
         return cnt >= k;
     };
     let left = 1, right = m * n;
