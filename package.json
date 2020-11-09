@@ -1,0 +1,33 @@
+{
+  "name": "leetcode",
+  "version": "1.0.0",
+  "description": "leetcode practice",
+  "main": ".eslintrc.js",
+  "dependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.13.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chiyu1996/leetcode.git"
+  },
+  "keywords": [
+    "leetcode",
+    "algorithm",
+    "javascript"
+  ],
+  "author": "chiyu1996",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chiyu1996/leetcode/issues"
+  },
+  "homepage": "https://github.com/chiyu1996/leetcode#readme",
+  "eslintConfig": {
+
+    "parser": "babel-eslint"
+  }
+}
