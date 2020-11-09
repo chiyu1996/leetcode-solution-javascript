@@ -46,7 +46,7 @@ var isOneEditDistance = function(s, t) {
   if (n - m >= 2) {
     return false;
   }
-  for (let i = 0; i < n; i++) {
+  for (let i = 0; i < m; i++) {
     if (s[i] !== t[i]) {
       return s.substring(i + 1) === t.substring(i + 1) || s.substring(i + 1) === t.substring(i);
     }
