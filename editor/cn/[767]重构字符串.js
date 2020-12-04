@@ -29,7 +29,6 @@
  * @param {string} S
  * @return {string}
  */
-const getAlpha = (c) => String.fromCharCode(c);
 var reorganizeString = function(S) {
   if (S.length < 2) {
     return S;
