@@ -11,8 +11,7 @@ var halvesAreAlike = function(s) {
     if (['a', 'e', 'i', 'o', 'u'].includes(s[i])) {
       if (i < n / 2) {
         result1++;
-      }
-      if (i >= n / 2) {
+      } else {
         result2++;
       }
     }
@@ -188,7 +187,7 @@ var findBall = function(grid) {
         return true;
       } else {
         next[1] = now[1];
-        next[0] = now[0] -1;
+        next[0] = now[0] - 1;
         return true;
       }
     }
@@ -198,12 +197,12 @@ var findBall = function(grid) {
     let last = { 0: i, 1: -1 };
     const next = {};
     while (true) {
-      if(i === 0){
-        console.log(last,now);
+      if (i === 0) {
+        console.log(last, now);
       }
       const hasNext = getNext(last, now, grid[now[1]][now[0]], next);
 
-      if(i === 0){
+      if (i === 0) {
         console.log(next);
       }
       if (!hasNext) {
@@ -214,8 +213,8 @@ var findBall = function(grid) {
         result[i] = -1;
         break;
       }
-      last = {...now};
-      now = {...next};
+      last = { ...now };
+      now = { ...next };
 
       if (next[1] === m) {
         result[i] = next[0];
