@@ -65,55 +65,47 @@
  * @param {string[][]} queries
  * @return {number[]}
  */
-/**
- * @param {string[][]} equations
- * @param {number[]} values
- * @param {string[][]} queries
- * @return {number[]}
- */
 var calcEquation = function(equations, values, queries) {
   const map = new Map();
   let total = 0;
-  const n = equations.length;
-  equations.map(([A, B]) => {
+  equations.map(([A,B])=>{
     if (!map.has(A)) {
-      map.set(A, total++);
+      map.set(A,total++);
     }
     if (!map.has(B)) {
-      map.set(B, total++);
+      map.set(B,total++);
     }
   })
-  const graph = new Array(total).fill(undefined).map(() => new Array(total).fill(-1.0));
+  const graph = new Array(total).fill(undefined).map(()=> new Array(total).fill(-1.0));
+  const n = equations.length;
   for (let i = 0; i < n; i++) {
-    const [A, B] = equations[i];
+    const [A,B] = equations[i];
     const indexA = map.get(A);
     const indexB = map.get(B);
     graph[indexA][indexB] = values[i];
-    graph[indexB][indexA] = 1 / values[i];
+    graph[indexB][indexA] = 1/values[i];
   }
   for (let k = 0; k < total; k++) {
     for (let i = 0; i < total; i++) {
       for (let j = 0; j < total; j++) {
-        if (graph[i][k] > 0 && graph[k][j] > 0) {
+        if(graph[i][k] > 0 && graph[k][j] > 0){
           graph[i][j] = Math.max(graph[i][j], graph[i][k] * graph[k][j]);
         }
       }
     }
   }
-  const q = queries.length;
   const ans = [];
-  for (let i = 0; i < q; i++) {
+  queries.map(([C,D])=>{
     let result = -1
-    const [C, D] = queries[i];
     const indexC = map.get(C);
     const indexD = map.get(D);
-    if (indexC !== undefined && indexD !== undefined) {
-      if (graph[indexC][indexD] > 0) {
-        result = graph[indexC][indexD];
+    if(indexC !==undefined && indexD !== undefined) {
+      if(graph[indexC][indexD]>0){
+        result=graph[indexC][indexD];
       }
     }
     ans.push(result);
-  }
+  })
   return ans;
 };
 // leetcode submit region end(Prohibit modification and deletion)
