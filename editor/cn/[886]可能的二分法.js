@@ -67,7 +67,8 @@ var possibleBipartition = function(N, dislikes) {
     return root;
   };
   const union = (x, y) => {
-    const a = find(x); const b = find(y);
+    const a = find(x);
+    const b = find(y);
     if (a !== b) {
       fa[a] = b;
     }
