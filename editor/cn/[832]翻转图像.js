@@ -40,10 +40,9 @@ var flipAndInvertImage = function(A) {
   const n = A.length;
   const m = A[0].length;
   for (let i = 0; i < n; i++) {
-    for (let j = 0; j < m; j++) {
-      A[i][j] ^= 1;
+    for (let j = 0; j < m / 2; j++) {
+      [A[i][j], A[i][m - 1 - j]] = [1 - A[i][m - 1 - j], 1 - A[i][j]];
     }
-    A[i].reverse()
   }
   return A;
 };
